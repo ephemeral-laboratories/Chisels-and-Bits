@@ -1,5 +1,6 @@
 package mod.chiselsandbits.bitbag;
 
+import mod.chiselsandbits.helpers.I18NHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -71,14 +72,8 @@ public class GuiBagFontRenderer extends FontRenderer
 	{
 		try
 		{
-			final int value = Integer.parseInt( text );
-
-			if ( value >= 1000 )
-			{
-				return value / 1000 + "k";
-			}
-
-			return text;
+			final int value = I18NHelper.parseInteger( text );
+			return I18NHelper.formatLarge(value);
 		}
 		catch ( final NumberFormatException e )
 		{

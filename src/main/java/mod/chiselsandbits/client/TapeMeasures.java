@@ -8,6 +8,7 @@ import mod.chiselsandbits.chiseledblock.data.BitLocation;
 import mod.chiselsandbits.core.ChiselsAndBits;
 import mod.chiselsandbits.core.ClientSide;
 import mod.chiselsandbits.helpers.DeprecationHelper;
+import mod.chiselsandbits.helpers.I18NHelper;
 import mod.chiselsandbits.modes.IToolMode;
 import mod.chiselsandbits.modes.TapeMeasureModes;
 import net.minecraft.client.Minecraft;
@@ -444,7 +445,7 @@ public class TapeMeasures
 
 		if ( blocks > 0 )
 		{
-			b.append( (int) blocks ).append( "m" );
+			b.append(I18NHelper.formatInteger((int) blocks)).append( "m" );
 		}
 
 		if ( bits * 16 > 0.9999 )
@@ -453,7 +454,7 @@ public class TapeMeasures
 			{
 				b.append( " " );
 			}
-			b.append( (int) ( bits * 16 ) ).append( "b" );
+			b.append(I18NHelper.formatInteger((int) ( bits * 16 ))).append( "b" );
 		}
 
 		return b.toString();
